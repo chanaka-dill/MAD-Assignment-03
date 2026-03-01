@@ -93,7 +93,7 @@ Clone the repository:
 ```
 ---
 
-B.R.C. Dilshan 
-Atudent ID: 11366
-SEN4302 - Mobile Application Development
+B.R.C. Dilshan /
+Student ID: 11366 /
+SEN4302 - Mobile Application Development /
 Assignment 03 – Mini Project
