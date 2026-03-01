@@ -84,6 +84,14 @@ This project demonstrates secure coding practices:
 
 ---
 
+## Getting Started
+To get a local copy of this project up and running:
+
+Clone the repository:
+   ```sh
+   git clone https://github.com/chanaka-dill/MAD-Assignment-03.git
+```
+---
 
 B.R.C. Dilshan  
 SEN4302 - Mobile Application Development
