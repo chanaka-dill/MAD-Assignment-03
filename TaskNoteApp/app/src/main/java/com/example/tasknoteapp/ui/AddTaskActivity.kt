@@ -21,7 +21,7 @@ class AddTaskActivity : AppCompatActivity() {
         edtDescription = findViewById(R.id.edtDescription)
         val btnSave = findViewById<Button>(R.id.btnSave)
 
-        // ✅ Preserve UI state on rotation (draft inputs)
+        // Preserve UI state on rotation (draft inputs)
         savedInstanceState?.let {
             edtTitle.setText(it.getString("draft_title", ""))
             edtDescription.setText(it.getString("draft_description", ""))
@@ -31,8 +31,7 @@ class AddTaskActivity : AppCompatActivity() {
             val title = edtTitle.text.toString()
             val description = edtDescription.text.toString()
 
-            // ✅ Secure Coding Practice #2: Input validation
-            // Prevent saving empty/invalid values (avoids unexpected app behavior / bad data)
+            // Validate title cannot be empty.
             if (title.isBlank()) {
                 Toast.makeText(this, "Task title is required", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -47,6 +46,7 @@ class AddTaskActivity : AppCompatActivity() {
         }
     }
 
+    // Save current input values before rotation
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString("draft_title", edtTitle.text.toString())

@@ -1,34 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:background="#FFFFFF"
+    android:padding="20dp">
 
+    <!-- Title -->
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/txtHeader"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Add Task"
-        android:textSize="20sp"
-        android:paddingBottom="12dp"/>
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#111111"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
 
-    <EditText
-        android:id="@+id/edtTitle"
-        android:layout_width="match_parent"
+    <!-- Small subtitle -->
+    <TextView
+        android:id="@+id/txtSub"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Task title (required)" />
+        android:text="Title is required • Description is optional"
+        android:textSize="13sp"
+        android:textColor="#777777"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@id/txtHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <EditText
-        android:id="@+id/edtDescription"
-        android:layout_width="match_parent"
+    <!-- Title input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Description (optional)"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="18dp"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#F3F4F6"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:layout_constraintTop_toBottomOf="@id/txtSub"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Task title (required)"
+            android:padding="14dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Description input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#F3F4F6"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:layout_constraintTop_toBottomOf="@id/titleLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description (optional)"
+            android:minLines="4"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:padding="14dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Save button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
         android:text="Save"
-        android:layout_marginTop="16dp"/>
-</LinearLayout>
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:cornerRadius="14dp"
+        app:backgroundTint="#14B8A6"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/descLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
